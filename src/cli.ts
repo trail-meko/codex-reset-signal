@@ -28,7 +28,7 @@ if (errors.length) {
       key: `test-${Date.now()}`,
       post: {
         id: "test",
-        text: "Codex Reset Signal - Test notification to verify SMTP delivery.",
+        text: "Codex 全局额度重置提醒测试：这是一封测试邮件，用于确认 Gmail SMTP 配置正常。",
         createdAt: new Date().toISOString(),
         url: `https://x.com/${config.username}`,
         media: [],

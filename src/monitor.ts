@@ -181,14 +181,20 @@ async function runLocked(config: AppConfig, deps: Dependencies): Promise<Monitor
         }
         // Bootstrap still detects recent signals for the dashboard, but historical
         // notifications remain opt-in to prevent a noisy first deployment.
+        const notificationEvents = events.filter(
+          (event) =>
+            event.type === "reset" &&
+            ["scheduled", "announced", "completed"].includes(event.status),
+        );
         if (
           (!bootstrap || config.bootstrapNotify) &&
+          notificationEvents.length > 0 &&
           !state.outbox.some((item) => item.key === version)
         ) {
           state.outbox.push({
             key: version,
             post,
-            events,
+            events: notificationEvents,
             targets: targets.map((target) => target.id),
             delivered: [],
           });

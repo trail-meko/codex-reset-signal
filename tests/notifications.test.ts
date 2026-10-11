@@ -3,7 +3,7 @@ import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it, vi } from "vitest";
-import { createTargets, renderEmail } from "../src/notifications";
+import { createTargets, renderEmail, renderText } from "../src/notifications";
 import { loadConfig, validateConfig } from "../src/config";
 
 describe("renderEmail", () => {
@@ -30,6 +30,23 @@ describe("renderEmail", () => {
     expect(html).not.toContain("<script>");
     expect(html).toContain("&lt;script&gt;");
     expect(html).toContain("https://example.com/image.jpg");
+  });
+
+  it("renders a Chinese confirmation state and Beijing post time", () => {
+    const text = renderText(
+      item.post,
+      [{
+        type: "reset",
+        status: "scheduled",
+        evidence: "will reset in two hours",
+        time: { kind: "unknown", start: null, end: null, evidence: "in two hours" },
+      }],
+      "Asia/Shanghai",
+    );
+    expect(text).toContain("确认状态：明确预告");
+    expect(text).toContain("原帖发布时间（北京时间）：2026-09-09 09:00:00");
+    expect(text).toContain("https://x.com/thsottiaux/status/1");
+    expect(text).toContain("Reset now @everyone");
   });
 });
 

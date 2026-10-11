@@ -106,4 +106,23 @@ describe("detected signal persistence", () => {
     expect(publicStatus.latest.reset.deliveryChannels).toEqual([]);
     expect(publicStatus.monitor.lastRunStatus).toBe("failed-1");
   });
+
+  it("keeps uncertain discussion visible but does not notify", async () => {
+    const { config, source } = await fixture(true);
+    source.getPosts.mockResolvedValue({
+      posts: [{ ...post, text: "Could Codex reset soon?" }],
+      newestId: "2",
+    });
+    const send = vi.fn();
+    const state = await runMonitor(config, {
+      source,
+      targets: [{ id: "email", channel: "email", send }],
+    });
+
+    expect(send).not.toHaveBeenCalled();
+    expect(state.matches[0].events).toMatchObject([
+      { type: "mention", status: "uncertain" },
+    ]);
+    expect(state.outbox).toEqual([]);
+  });
 });

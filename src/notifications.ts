@@ -3,6 +3,7 @@ import { createHash, createHmac } from "node:crypto";
 import { appendFile } from "node:fs/promises";
 import type { AppConfig, PendingNotification, XPost } from "./types";
 import { formatTime, type ResetEvent } from "./events";
+import { DateTime } from "luxon";
 
 export type NotificationTarget = {
   id: string;
@@ -25,18 +26,36 @@ const labels = {
   mention: "Reset 相关讨论（未确认）",
 };
 const statuses = {
-  scheduled: "预告",
-  completed: "已宣布完成",
-  announced: "公告",
-  uncertain: "未确认",
+  scheduled: "明确预告",
+  completed: "已确认重置",
+  announced: "明确预告",
+  uncertain: "未确认（不发送）",
 };
+const confirmationFor = (events: ResetEvent[]) =>
+  events.length === 0
+    ? "测试通知"
+    : events.some((event) => event.type === "reset" && event.status === "completed")
+    ? "已确认重置"
+    : events.some(
+          (event) =>
+            event.type === "reset" &&
+            ["scheduled", "announced"].includes(event.status),
+        )
+      ? "明确预告"
+      : "未确认";
+const subjectFor = (username: string, events: ResetEvent[]) =>
+  `【Codex 全局额度${events.length ? confirmationFor(events) : "提醒测试"}】@${username}`;
 export function renderText(
   post: XPost,
   events: ResetEvent[],
   timezone: string,
 ): string {
   return [
-    `Reset Signal · @${new URL(post.url).pathname.split("/")[1]}`,
+    `Codex 全局额度提醒 · @${new URL(post.url).pathname.split("/")[1]}`,
+    `确认状态：${confirmationFor(events)}`,
+    post.createdAt
+      ? `原帖发布时间（北京时间）：${DateTime.fromISO(post.createdAt).setZone(timezone).toFormat("yyyy-MM-dd HH:mm:ss ZZ")}`
+      : "原帖发布时间（北京时间）：未知",
     ...events.map(
       (e) =>
         `${labels[e.type]} · ${statuses[e.status]}\n${formatTime(e.time, timezone)}`,
@@ -133,7 +152,7 @@ export function createTargets(
             user: config.gmailUser,
             password: config.gmailAppPassword,
             to: recipient,
-            subject: `Reset Signal: @${config.username}`,
+            subject: subjectFor(config.username, item.events),
             text: renderText(item.post, item.events, config.timezone),
             html: renderEmail(item.post, config.username, config.keyword, item.events, config.timezone),
           }));
@@ -145,7 +164,7 @@ export function createTargets(
         {
           from: config.emailFrom,
           to: [recipient],
-          subject: `Reset Signal: @${config.username}`,
+          subject: subjectFor(config.username, item.events),
           html: renderEmail(
             item.post,
             config.username,
