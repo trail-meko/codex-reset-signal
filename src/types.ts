@@ -115,6 +115,10 @@ export type AppConfig = {
   publicStatusPath?: string;
   gmailUser?: string;
   gmailAppPassword?: string;
+  smtpHost?: string;
+  smtpPort?: number;
+  smtpUser?: string;
+  smtpPassword?: string;
   resendApiKey?: string;
   emailFrom?: string;
   emailTo: string[];

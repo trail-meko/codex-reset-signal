@@ -42,6 +42,10 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
     publicStatusPath: env.PUBLIC_STATUS_PATH?.trim() || undefined,
     gmailUser: env.GMAIL_USER?.trim(),
     gmailAppPassword: env.GMAIL_APP_PASSWORD?.replace(/\s/g, ""),
+    smtpHost: env.SMTP_HOST?.trim(),
+    smtpPort: env.SMTP_PORT?.trim() ? Number(env.SMTP_PORT) : undefined,
+    smtpUser: env.SMTP_USER?.trim(),
+    smtpPassword: env.SMTP_PASSWORD?.replace(/\s/g, ""),
     resendApiKey: env.RESEND_API_KEY?.trim(),
     emailFrom: env.EMAIL_FROM?.trim(),
     emailTo: Array.from(
@@ -66,12 +70,21 @@ export function validateConfig(
     errors.push("X_USERNAME must be a valid X handle.");
   }
 
+  const smtpSelected = Boolean(
+    config.smtpHost || config.smtpPort !== undefined || config.smtpUser || config.smtpPassword,
+  );
   const gmailSelected = Boolean(config.gmailUser || config.gmailAppPassword);
-  if (gmailSelected && !(config.gmailUser && config.gmailAppPassword && config.emailTo.length))
+  if (smtpSelected) {
+    if (!(config.smtpHost && config.smtpPort && config.smtpUser && config.smtpPassword && config.emailTo.length))
+      errors.push("SMTP requires SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, and EMAIL_TO.");
+    if (config.smtpPort !== undefined && (!Number.isInteger(config.smtpPort) || config.smtpPort < 1 || config.smtpPort > 65535))
+      errors.push("SMTP_PORT must be an integer from 1 to 65535.");
+  } else if (gmailSelected && !(config.gmailUser && config.gmailAppPassword && config.emailTo.length)) {
     errors.push("Gmail requires GMAIL_USER, GMAIL_APP_PASSWORD, and EMAIL_TO.");
-  if (!gmailSelected && Boolean(config.resendApiKey || config.emailFrom || config.emailTo.length) &&
-      !(config.resendApiKey && config.emailFrom && config.emailTo.length))
+  } else if (!gmailSelected && Boolean(config.resendApiKey || config.emailFrom || config.emailTo.length) &&
+      !(config.resendApiKey && config.emailFrom && config.emailTo.length)) {
     errors.push("Resend requires RESEND_API_KEY, EMAIL_FROM, and EMAIL_TO.");
+  }
 
   const smsPartiallyConfigured =
     Boolean(

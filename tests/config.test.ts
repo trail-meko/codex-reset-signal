@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { loadConfig } from "../src/config";
+import { loadConfig, validateConfig } from "../src/config";
 
 describe("source timezone defaults", () => {
   it("defaults @thsottiaux announcements to America/Los_Angeles", () => {
@@ -38,6 +38,23 @@ describe("email recipient config", () => {
       "b@example.com",
       "c@example.com",
     ]);
+  });
+});
+
+describe("generic SMTP config", () => {
+  it("loads QQ SMTP settings without exposing credentials", () => {
+    const config = loadConfig({
+      SMTP_HOST: "smtp.qq.com",
+      SMTP_PORT: "465",
+      SMTP_USER: "sender@qq.com",
+      SMTP_PASSWORD: "hidden-app-password",
+      EMAIL_TO: "recipient@example.com",
+    });
+    expect(config.smtpHost).toBe("smtp.qq.com");
+    expect(config.smtpPort).toBe(465);
+    expect(config.smtpUser).toBe("sender@qq.com");
+    expect(config.smtpPassword).toBe("hidden-app-password");
+    expect(validateConfig(config)).toEqual([]);
   });
 });
 

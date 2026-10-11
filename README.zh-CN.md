@@ -108,6 +108,7 @@ MONITOR_ENABLED=false
 | Discord | `DISCORD_WEBHOOK_URLS` |
 | Webhook | `WEBHOOK_URLS`；可选 `WEBHOOK_SECRET` |
 | Resend 邮件 | `RESEND_API_KEY`、`EMAIL_FROM`、`EMAIL_TO` |
+| SSL SMTP（如 QQ 邮箱） | `SMTP_HOST`、`SMTP_PORT`、`SMTP_USER`、`SMTP_PASSWORD`、`EMAIL_TO`；详见 [QQ SMTP 设置](QQ-SMTP-SETUP.md) |
 | Twilio 短信 | `TWILIO_ACCOUNT_SID`、`TWILIO_AUTH_TOKEN`、`TWILIO_FROM`、`SMS_TO` |
 | RSS / Atom 消费端 | 订阅 `/feed.xml`；本项目不保存第三方通知平台凭据 |
 

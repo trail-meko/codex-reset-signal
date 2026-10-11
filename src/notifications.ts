@@ -132,6 +132,35 @@ export function createTargets(
     });
   for (const recipient of config.emailTo)
     add("email", recipient, async (item) => {
+      if (config.smtpHost && config.smtpPort && config.smtpUser && config.smtpPassword) {
+        await new Promise<void>((resolve, reject) => {
+          const pythonBin =
+            process.env.PYTHON_BIN ||
+            (process.platform === "win32" ? "python" : "python3");
+          const child = spawn(pythonBin, ["scripts/send_smtp.py"], {
+            stdio: ["pipe", "pipe", "pipe"],
+          });
+          let stderr = "";
+          child.stderr.on("data", (chunk: Buffer) => {
+            stderr += chunk.toString().slice(0, 1000);
+          });
+          child.on("error", () => reject(new Error("SMTP sender could not start")));
+          child.on("close", (code) => code === 0
+            ? resolve()
+            : reject(new Error(`SMTP delivery failed (exit ${code}): ${stderr.slice(0, 500)}`)));
+          child.stdin.end(JSON.stringify({
+            host: config.smtpHost,
+            port: config.smtpPort,
+            user: config.smtpUser,
+            password: config.smtpPassword,
+            to: recipient,
+            subject: subjectFor(config.username, item.events),
+            text: renderText(item.post, item.events, config.timezone),
+            html: renderEmail(item.post, config.username, config.keyword, item.events, config.timezone),
+          }));
+        });
+        return;
+      }
       if (config.gmailUser && config.gmailAppPassword) {
         await new Promise<void>((resolve, reject) => {
           const pythonBin =

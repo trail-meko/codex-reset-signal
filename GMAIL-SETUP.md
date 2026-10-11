@@ -8,4 +8,4 @@
 6. Once verified, delete unused `RESEND_API_KEY` and `EMAIL_FROM` secrets.
 7. The `monitor-state` branch must exist; consult upstream README for initial setup.
 
-Gmail takes precedence over Resend when both are configured.
+When multiple mail senders are configured, SSL SMTP takes precedence over Gmail SMTP, which takes precedence over Resend.
