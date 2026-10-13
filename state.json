@@ -4,15 +4,14 @@
   "keyword": "reset",
   "userId": "1953337039510003712",
   "sinceId": "2109892247580000595",
-  "lastCheckedAt": "2026-10-13T08:11:16.785Z",
-  "lastSuccessAt": "2026-10-13T08:11:16.785Z",
-  "lastRunStatus": "checked-10-posts",
+  "lastCheckedAt": "2026-10-13T15:58:26.245Z",
+  "lastSuccessAt": "2026-10-13T15:58:26.245Z",
+  "lastRunStatus": "checked-0-posts",
   "postsScanned": 64,
   "matches": [
     {
       "version": "0c2365f179f9ebd9526f6652d6d5b41cd355a42feb13a8dbdee1544d6ad1da78",
       "id": "2109873287853707513",
-      "canonicalId": "2109873287853707513",
       "text": "What would you like with your side of reset? It's done.",
       "createdAt": "2026-10-13T05:06:06.000Z",
       "url": "https://x.com/thsottiaux/status/2109873287853707513",
