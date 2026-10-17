@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T18:21:00.545Z",
+  "updatedAt": "2026-10-17T20:45:25.745Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-10-17T18:21:00.543Z",
-    "lastSuccessAt": "2026-10-17T18:21:00.543Z",
-    "lastRunStatus": "checked-9-posts"
+    "lastCheckedAt": "2026-10-17T20:45:25.741Z",
+    "lastSuccessAt": "2026-10-17T20:45:25.741Z",
+    "lastRunStatus": "checked-2-posts"
   },
   "latestObservedPost": {
-    "id": "2111522308666077527",
-    "text": "@jkeatn Let’s pump those numbers up",
-    "url": "https://x.com/thsottiaux/status/2111522308666077527",
-    "postCreatedAt": "2026-10-17T18:18:43.000Z"
+    "id": "2111523665817047359",
+    "text": "@ajambrosino @petergyang @amorriscode 🍺👌",
+    "url": "https://x.com/thsottiaux/status/2111523665817047359",
+    "postCreatedAt": "2026-10-17T18:24:06.000Z"
   },
   "latest": {
     "reset": {
