@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-25T04:39:04.823Z",
+  "updatedAt": "2026-10-25T09:24:44.551Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-10-25T04:39:04.820Z",
-    "lastSuccessAt": "2026-10-25T04:39:04.820Z",
-    "lastRunStatus": "checked-3-posts"
+    "lastCheckedAt": "2026-10-25T09:24:44.546Z",
+    "lastSuccessAt": "2026-10-25T09:24:44.546Z",
+    "lastRunStatus": "checked-4-posts"
   },
   "latestObservedPost": {
-    "id": "2114200291319124163",
-    "text": "By midnight PST",
-    "url": "https://x.com/thsottiaux/status/2114200291319124163",
-    "postCreatedAt": "2026-10-25T03:40:04.000Z"
+    "id": "2114237441250828563",
+    "text": "@ScriptedAlchemy .com",
+    "url": "https://x.com/thsottiaux/status/2114237441250828563",
+    "postCreatedAt": "2026-10-25T06:07:41.000Z"
   },
   "latest": {
     "reset": {
@@ -69,6 +69,30 @@
     "bankExpiry": null
   },
   "recent": [
+    {
+      "version": "b9d449b7729cd88e67ea3d4e502de24abc9b87cbe3e939a8b0ef8c3126c5ce58",
+      "id": "2114228044072403055",
+      "text": "@theo Not a real improvement, put the reset in the bag",
+      "url": "https://x.com/thsottiaux/status/2114228044072403055",
+      "postCreatedAt": "2026-10-25T05:30:20.000Z",
+      "detectedAt": "2026-10-25T09:24:44.546Z",
+      "events": [
+        {
+          "type": "mention",
+          "status": "uncertain",
+          "evidence": "@theo Not a real improvement, put the reset in the bag",
+          "time": {
+            "kind": "unknown",
+            "start": null,
+            "end": null,
+            "evidence": "@theo Not a real improvement, put the reset in the bag",
+            "note": "讨论、请求、弱判断或否定，不代表已确认的重置"
+          }
+        }
+      ],
+      "deliveryChannels": [],
+      "origin": "live"
+    },
     {
       "version": "72f6ac530cb6d09cb0c957d3535c8768295542be3bfd44f88d1ecb0c18a872b4",
       "id": "2114200152701575656",
