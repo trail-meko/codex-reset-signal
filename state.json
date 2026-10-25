@@ -4,15 +4,14 @@
   "keyword": "reset",
   "userId": "1953337039510003712",
   "sinceId": "2114237441250828563",
-  "lastCheckedAt": "2026-10-25T09:24:44.546Z",
-  "lastSuccessAt": "2026-10-25T09:24:44.546Z",
-  "lastRunStatus": "checked-4-posts",
+  "lastCheckedAt": "2026-10-25T13:48:56.644Z",
+  "lastSuccessAt": "2026-10-25T13:48:56.644Z",
+  "lastRunStatus": "checked-0-posts",
   "postsScanned": 161,
   "matches": [
     {
       "version": "b9d449b7729cd88e67ea3d4e502de24abc9b87cbe3e939a8b0ef8c3126c5ce58",
       "id": "2114228044072403055",
-      "canonicalId": "2114228044072403055",
       "text": "@theo Not a real improvement, put the reset in the bag",
       "createdAt": "2026-10-25T05:30:20.000Z",
       "url": "https://x.com/thsottiaux/status/2114228044072403055",
