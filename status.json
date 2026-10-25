@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-25T00:10:37.109Z",
+  "updatedAt": "2026-10-25T04:39:04.823Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-10-25T00:10:37.102Z",
-    "lastSuccessAt": "2026-10-25T00:10:37.102Z",
-    "lastRunStatus": "checked-2-posts"
+    "lastCheckedAt": "2026-10-25T04:39:04.820Z",
+    "lastSuccessAt": "2026-10-25T04:39:04.820Z",
+    "lastRunStatus": "checked-3-posts"
   },
   "latestObservedPost": {
-    "id": "2114125878804545940",
-    "text": "@mitsuhiko I doubt they are on twitter",
-    "url": "https://x.com/thsottiaux/status/2114125878804545940",
-    "postCreatedAt": "2026-10-24T22:44:22.000Z"
+    "id": "2114200291319124163",
+    "text": "By midnight PST",
+    "url": "https://x.com/thsottiaux/status/2114200291319124163",
+    "postCreatedAt": "2026-10-25T03:40:04.000Z"
   },
   "latest": {
     "reset": {
@@ -69,6 +69,30 @@
     "bankExpiry": null
   },
   "recent": [
+    {
+      "version": "72f6ac530cb6d09cb0c957d3535c8768295542be3bfd44f88d1ecb0c18a872b4",
+      "id": "2114200152701575656",
+      "text": "Day 20/ Rest and reset",
+      "url": "https://x.com/thsottiaux/status/2114200152701575656",
+      "postCreatedAt": "2026-10-25T03:39:31.000Z",
+      "detectedAt": "2026-10-25T04:39:04.820Z",
+      "events": [
+        {
+          "type": "mention",
+          "status": "uncertain",
+          "evidence": "Day 20/ Rest and reset",
+          "time": {
+            "kind": "unknown",
+            "start": null,
+            "end": null,
+            "evidence": "Day 20/ Rest and reset",
+            "note": "未形成明确的重置承诺或完成确认"
+          }
+        }
+      ],
+      "deliveryChannels": [],
+      "origin": "live"
+    },
     {
       "version": "84e83973968a4c109d3e23f1603ecf6dbb16af8820693e625bd2006eebeccbfb",
       "id": "2113492187770175603",
