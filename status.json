@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-28T00:05:30.175Z",
+  "updatedAt": "2026-10-28T05:30:00.558Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-10-28T00:05:30.171Z",
-    "lastSuccessAt": "2026-10-28T00:05:30.171Z",
-    "lastRunStatus": "checked-0-posts"
+    "lastCheckedAt": "2026-10-28T05:30:00.554Z",
+    "lastSuccessAt": "2026-10-28T05:30:00.554Z",
+    "lastRunStatus": "checked-8-posts"
   },
   "latestObservedPost": {
-    "id": "2115148258372964831",
-    "text": "@BrenBuilds A sign of great things to come",
-    "url": "https://x.com/thsottiaux/status/2115148258372964831",
-    "postCreatedAt": "2026-10-27T18:26:57.000Z"
+    "id": "2115299029294920189",
+    "text": "@mark_k @OpenAI Taking notes",
+    "url": "https://x.com/thsottiaux/status/2115299029294920189",
+    "postCreatedAt": "2026-10-28T04:26:03.000Z"
   },
   "latest": {
     "reset": {
@@ -69,6 +69,30 @@
     "bankExpiry": null
   },
   "recent": [
+    {
+      "version": "81aa0416a461f3aedd751e42cca996b60e3af36c5e8c7e391f5ef7d01ce6ef61",
+      "id": "2115273064481218829",
+      "text": "Day 23/ Much requested iCloud Main &amp; Calendar plugins. Just kidding, today is a reset. Still much requested though!",
+      "url": "https://x.com/thsottiaux/status/2115273064481218829",
+      "postCreatedAt": "2026-10-28T02:42:53.000Z",
+      "detectedAt": "2026-10-28T05:30:00.554Z",
+      "events": [
+        {
+          "type": "mention",
+          "status": "uncertain",
+          "evidence": "Just kidding, today is a reset",
+          "time": {
+            "kind": "unknown",
+            "start": null,
+            "end": null,
+            "evidence": "Just kidding, today is a reset",
+            "note": "未形成明确的重置承诺或完成确认"
+          }
+        }
+      ],
+      "deliveryChannels": [],
+      "origin": "live"
+    },
     {
       "version": "0ed9171ef1a5ce3545afbab8a929e6404915691424944a6d484536d78e66c1e3",
       "id": "2114599388454481930",
@@ -546,30 +570,6 @@
       ],
       "deliveryChannels": [],
       "origin": "live"
-    },
-    {
-      "version": "history:2096035437299237298",
-      "id": "2096035437299237298",
-      "text": "Because we are beyond happy to have Astra rolled out today ahead of schedule and you have been super patient with us (not really, but it’s ok!)… we will do the full banked reset today too for all Plus, Pro and Business users. Lands end of day. Happy Astra day and enjoy a phenomenal weekend. PS: If you create the account or upgrade before 8pm PT you will get it too. Still time!",
-      "url": "https://x.com/thsottiaux/status/2096035437299237298",
-      "postCreatedAt": "2026-09-05T00:39:25.364Z",
-      "detectedAt": "2026-09-09T08:30:00.000Z",
-      "events": [
-        {
-          "type": "bank_credit",
-          "status": "announced",
-          "evidence": "we will do the full banked reset today too for all Plus, Pro and Business users",
-          "time": {
-            "kind": "unknown",
-            "start": null,
-            "end": null,
-            "evidence": "Lands end of day",
-            "note": "Banked reset was promised by end of day, but no safe exact landing time is stated. The separate 8pm PT time is an eligibility cutoff for account creation or upgrade, not the bank-credit landing time."
-          }
-        }
-      ],
-      "deliveryChannels": [],
-      "origin": "historical_seed"
     }
   ]
 }
