@@ -4,15 +4,14 @@
   "keyword": "reset",
   "userId": "1953337039510003712",
   "sinceId": "2119309070658318698",
-  "lastCheckedAt": "2026-11-08T09:12:24.099Z",
-  "lastSuccessAt": "2026-11-08T09:12:24.099Z",
-  "lastRunStatus": "checked-10-posts",
+  "lastCheckedAt": "2026-11-08T15:58:58.347Z",
+  "lastSuccessAt": "2026-11-08T15:58:58.347Z",
+  "lastRunStatus": "checked-0-posts",
   "postsScanned": 303,
   "matches": [
     {
       "version": "968ea4e2d85d2fccdde068e8c8c332ee6bf0c9be3748cd7bfc83a6b8dbfa8074",
       "id": "2119308687676432672",
-      "canonicalId": "2119308687676432672",
       "text": "@ForwardEditor We hesitated to embed https://t.co/TnRNoyTR5X into the codex app to make sense of the resets, but decided against it.",
       "createdAt": "2026-11-08T05:59:00.000Z",
       "url": "https://x.com/thsottiaux/status/2119308687676432672",
